@@ -2,14 +2,14 @@ var createActions = {
   createForm: function () {
     return this
       .click('@addButton')
-      .waitForElementVisible('@movieForm', 10000)
+      .waitForElementVisible('@movieForm', 15000)
   },
 
   selectStatus: function (status) {
     return this
       .click('@statusSelect')
       .useXpath()
-      .waitForElementVisible(`//li//span[contains(text(),"${status}")]`, 2000)
+      .waitForElementVisible(`//li//span[contains(text(),"${status}")]`, 15000)
       .click(`//li//span[contains(text(),"${status}")]`)
       .useCss()
   },
@@ -28,7 +28,7 @@ var createActions = {
     let fullPath = require('path').resolve(__dirname, '../images/' + fileName)
     return this
       .setValue('@uploadInput', fullPath)
-      .pause(1000)
+      .pause(2000)
       .assert.attributeContains('.picture-src', 'src', 'blob')
   }
 }
