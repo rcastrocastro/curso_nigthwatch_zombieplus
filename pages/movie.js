@@ -1,6 +1,7 @@
 var createActions = {
   createForm: function () {
     return this
+      .pause(2000)
       .click('@addButton')
       .waitForElementVisible('@movieForm', 15000)
   },
